@@ -10,7 +10,7 @@ CREATE TABLE user_type (
 );
 
 -- Table des utilisateurs
-CREATE TABLE app_user (
+CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
@@ -22,6 +22,6 @@ CREATE TABLE app_user (
 INSERT INTO user_type (type_name) VALUES ('Admin'), ('Commercial');
 
 -- Utilisateurs
-INSERT INTO app_user (first_name, last_name, user_type_id) VALUES
+INSERT INTO users (first_name, last_name, user_type_id) VALUES
 ('Alice', 'Dupont', 1),
 ('Bob', 'Martin', 2);
