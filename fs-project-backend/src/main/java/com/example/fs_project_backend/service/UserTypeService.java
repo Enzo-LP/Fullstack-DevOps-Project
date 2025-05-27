@@ -10,7 +10,7 @@ public interface UserTypeService {
 
     UserType create(UserType userType);
 
-    UserType update(Long id, UserType updated);
+    UserType update(Integer id, UserType updated);
 
-    void delete(Long id);
+    void delete(Integer id);
 }
