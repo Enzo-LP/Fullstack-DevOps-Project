@@ -21,6 +21,9 @@ public class User {
     @Column(name="last_name", nullable = false)
     private String lastName;
 
+    @Column(name="email", nullable = false)
+    private String email;
+
     @ManyToOne
     @JoinColumn(name = "user_type_id", nullable = false)
     private UserType userType;

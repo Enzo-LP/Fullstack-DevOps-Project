@@ -1,1 +1,26 @@
-<p>user-type-list works!</p>
+<div class="bg-secondary text-white text-center py-2 fs-5 fw-semibold" style="background-color: #708090ff;">
+  Type user List
+</div>
+
+<div class="container text-center mt-3">
+    <button class="btn my-3" routerLink="/user-type-form" style="background-color: #890e54ff; color: white; width: 150px;">Add a type user</button>
+    <table class="table table-bordered">
+    <thead class="custom-thead">
+        <tr>
+        <th (click)="sortBy('id')">Id {{ getSortIcon('id') }}</th>
+        <th (click)="sortBy('typeName')">Type user {{ getSortIcon('typeName') }}</th>
+        <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let type of userTypes">
+        <td>{{ type.id }}</td>
+        <td>{{ type.typeName }}</td>
+        <td>
+            <button class="btn btn-info me-2" (click)="edit(type.id!)">Edit</button>
+            <button class="btn btn-danger" (click)="delete(type.id!)">Remove</button>
+        </td>
+        </tr>
+    </tbody>
+    </table>
+</div>

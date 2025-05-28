@@ -1,1 +1,30 @@
-<p>user-list works!</p>
+<div class="bg-secondary text-white text-center py-2 fs-5 fw-semibold" style="background-color: #708090ff;">
+  User List
+</div>
+
+<div class="container text-center mt-3">
+    <button class="btn my-3" routerLink="/user-form" style="background-color: #890e54ff; color: white; width: 150px;">Add an user</button>
+    <table class="table table-bordered">
+    <thead class="custom-thead">
+        <tr>
+        <th (click)="sortBy('userType')">Type User {{ getSortIcon('userType') }}</th>
+        <th (click)="sortBy('lastName')">Last name {{ getSortIcon('lastName') }}</th>
+        <th (click)="sortBy('firstName')">First name {{ getSortIcon('firstName') }}</th>
+        <th (click)="sortBy('email')">Email {{ getSortIcon('email') }}</th>
+        <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+        <td>{{ user.userType.typeName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.email }}</td>
+        <td>
+            <button class="btn btn-info me-2" (click)="edit(user.id!)">Edit</button>
+            <button class="btn btn-danger" (click)="delete(user.id!)">Remove</button>
+        </td>
+        </tr>
+    </tbody>
+    </table>
+</div>

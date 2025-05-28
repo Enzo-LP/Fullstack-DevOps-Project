@@ -1,0 +1,4 @@
+table.table thead.custom-thead tr th {
+  background-color: rgba(137, 14, 84, 1) !important;
+  color: white !important;
+}

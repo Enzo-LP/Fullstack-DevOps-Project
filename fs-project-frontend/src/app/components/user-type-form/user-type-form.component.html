@@ -1,20 +1,30 @@
-<app-header></app-header>
-
-<div class="bg-secondary text-white text-center py-2 fs-5 fw-semibold">
-  Add / Edit an user
+<div class="bg-secondary text-white text-center py-2 fs-5 fw-semibold" style="background-color: #708090ff;">
+  {{ isEditMode ? 'Edit' : 'Add' }} a type user
 </div>
 
-<div class="d-flex flex-column align-items-center justify-content-center bg-light" style="height: 70vh;">
+<div class="d-flex flex-column align-items-center text-center" style="height: 70vh;">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <input
       type="text"
       formControlName="label"
       placeholder="Type user"
-      class="form-control text-center mb-4"
-      style="max-width: 300px; border: 2px solid #800040;"
+      class="form-control text-center mb-4 mt-5"
+      style="max-width: 300px; border: 2px solid #890e54ff;"
     />
-    <button type="submit" class="btn" style="background-color: #800040; color: white; width: 150px;">
-      Create
+    <div *ngIf="label?.invalid && (label?.dirty || label?.touched)" class="alert alert-danger mt-1" style="padding: 5px;">
+      <div *ngIf="label?.errors?.['required'] || label?.errors?.['notOnlyWhitespace']">
+          the User type is required
+      </div>
+    </div>
+
+    <button type="submit" class="btn" style="background-color: #890e54ff; color: white; width: 150px;">
+      {{ isEditMode ? 'Update' : 'Create' }}
     </button>
+
+    <br>
+    <button class="btn btn-secondary mt-2" (click)="goBack()">
+      Back
+    </button>
+
   </form>
 </div>

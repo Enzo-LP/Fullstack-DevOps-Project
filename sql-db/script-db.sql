@@ -14,6 +14,7 @@ CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
     user_type_id INT NOT NULL,
     FOREIGN KEY (user_type_id) REFERENCES user_type(id)
 );
@@ -22,6 +23,6 @@ CREATE TABLE users (
 INSERT INTO user_type (type_name) VALUES ('Admin'), ('Commercial');
 
 -- Utilisateurs
-INSERT INTO users (first_name, last_name, user_type_id) VALUES
-('Alice', 'Dupont', 1),
-('Bob', 'Martin', 2);
+INSERT INTO users (first_name, last_name, email, user_type_id) VALUES
+('Alice', 'Dupont', "adupont@hn-services.fr", 1),
+('Bob', 'Martin', "bmartin@hn-services.fr", 2);

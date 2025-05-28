@@ -5,9 +5,10 @@ import { UserTypeListComponent } from './components/user-type-list/user-type-lis
 import { UserTypeFormComponent } from './components/user-type-form/user-type-form.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'user-list', pathMatch: 'full' },
   { path: 'user-form', component: UserFormComponent },
   { path: 'user-type-form', component: UserTypeFormComponent },
   { path: 'user-list', component: UserListComponent },
-  { path: 'type-user-list', component: UserTypeListComponent },
+  { path: 'user-type-list', component: UserTypeListComponent },
+  { path: '**', redirectTo: 'user-list'},
+  { path: '', redirectTo: 'user-list', pathMatch: 'full' },
 ];
